@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kannada Font Hub | Upload & Download</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ಸಿರಿಗನ್ನಡ (SiriGannada)</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#browse">Browse Fonts</a>
+            <a href="#upload" class="upload-link">Upload</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Download Free Kannada Fonts</h1>
+        <p>A community-driven library for Kannada designers and writers.</p>
+    </header>
+
+    <main class="container">
+        <!-- Upload Section for Creators -->
+        <section id="upload" class="card">
+            <h3>Share Your Font</h3>
+            <p>Upload your custom .ttf or .otf files for the community.</p>
+            <div class="upload-box">
+                <input type="file" id="fontInput" accept=".ttf, .otf">
+                <button onclick="handleUpload()" class="btn-primary">Publish Font</button>
+            </div>
+        </section>
+
+        <!-- Download Section for Audience -->
+        <section id="browse">
+            <div class="section-header">
+                <h2>Popular Downloads</h2>
+                <input type="text" id="search" placeholder="Search font name...">
+            </div>
+
+            <div class="font-grid" id="fontGrid">
+                <!-- Font Item 1 -->
+                <div class="font-card">
+                    <div class="font-info">
+                        <span class="font-tag">TTF</span>
+                        <span class="font-size">1.2 MB</span>
+                    </div>
+                    <h3 class="font-name">Akshara Bold</h3>
+                    <p class="preview-text">ಕನ್ನಡ ಉಳಿಸಿ, ಕನ್ನಡ ಬೆಳೆಸಿ</p>
+                    <div class="card-footer">
+                        <button class="btn-download">Download Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- Inside the <main> tag, before the grid -->
+<section class="controls card">
+    <div class="control-group">
+        <label>Preview Text:</label>
+        <input type="text" id="globalPreviewInput" placeholder="ನಿಮ್ಮ ಹೆಸರನ್ನು ಇಲ್ಲಿ ಬರೆಯಿರಿ..." oninput="updatePreviews()">
+    </div>
+    <div class="control-group">
+        <label>Font Size:</label>
+        <input type="range" id="sizeSlider" min="20" max="80" value="40" oninput="updatePreviews()">
+        <span id="sizeValue">40px</span>
+    </div>
+</section>
+
+<!-- Filter Tabs -->
+<div class="tabs">
+    <button class="tab active" onclick="filterFonts('all')">All Fonts</button>
+    <button class="tab" onclick="filterFonts('classic')">Classic</button>
+    <button class="tab" onclick="filterFonts('modern')">Modern</button>
+</div>
+
+<div class="font-grid" id="fontGrid">
+    <!-- Fonts will be injected here by JavaScript -->
+</div>
+<!-- Add this inside the .navbar -->
+<div class="mode-switch">
+    <label class="switch">
+        <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+        <span class="slider round"></span>
+    </label>
+    <span>Dark Mode</span>
+</div>
+
+<!-- Modal for Testing Fonts -->
+<div id="testModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalFontName">Font Tester</h2>
+        <textarea id="modalText" placeholder="ಇಲ್ಲಿ ದೊಡ್ಡ ಪ್ಯಾರಾಗ್ರಾಫ್ ಟೈಪ್ ಮಾಡಿ...">ಕನ್ನಡ ಎನೆ ಕುಣಿದಾಡುವುದೆನ್ನದೆ, ಕನ್ನಡ ಎನೆ ಕಿವಿ ನಿಮಿರುವಿದೆ.</textarea>
+        <div class="modal-actions">
+            <button class="btn-primary">Copy Sample Text</button>
+            <button class="btn-download">Download Now</button>
+        </div>
+    </div>
+</div>
