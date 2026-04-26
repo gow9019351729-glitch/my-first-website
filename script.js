@@ -148,3 +148,19 @@ window.onload = () => {
     }
     renderFonts();
 };
+function downloadFile(fileName, fileUrl) {
+    // 1. Find our hidden anchor tag
+    const anchor = document.getElementById('downloadAnchor');
+    
+    // 2. Set the path to the file (the 'pond' or source)
+    anchor.href = fileUrl;
+    
+    // 3. Tell the browser to download it instead of opening it
+    anchor.download = fileName;
+    
+    // 4. "Ironclick" - trigger the download automatically
+    anchor.click();
+    
+    // Optional: Show a "Thank you" note
+    alert("ಧನ್ಯವಾದಗಳು! Your download for " + fileName + " has started.");
+}

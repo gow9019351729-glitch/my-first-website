@@ -104,3 +104,95 @@
         </div>
     </div>
 </div>
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Hub - Indoor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>ಕನ್ನಡ ಫಾಂಟ್ಸ್</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">📊 Dashboard</a>
+                <a href="#" class="nav-item">📁 My Uploads</a>
+                <a href="#" class="nav-item">❤️ Favorites</a>
+                <a href="#" class="nav-item">⚙️ Settings</a>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">U</div>
+                <span>User Name</span>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h3>Indoor Admin Panel</h3>
+                <div class="stats-row">
+                    <div class="stat-box"><strong>12</strong> Fonts Uploaded</div>
+                    <div class="stat-box"><strong>1.2k</strong> Downloads</div>
+                </div>
+            </header>
+
+            <section class="interface-body">
+                <div class="card">
+                    <h4>Upload Management</h4>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Font Name</th>
+                                <th>Format</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nudi Regular</td>
+                                <td>TTF</td>
+                                <td><span class="badge success">Active</span></td>
+                                <td><button class="edit-btn">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Akshara Thin</td>
+                                <td>OTF</td>
+                                <td><span class="badge pending">Review</span></td>
+                                <td><button class="edit-btn">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Live Interface Testing -->
+                <div class="card">
+                    <h4>Indoor Font Renderer</h4>
+                    <div class="render-box">
+                        <p class="preview-text">ಈ ಅಕ್ಷರಶೈಲಿಯು ಒಳಾಂಗಣ ಇಂಟರ್ಫೇಸ್ನಲ್ಲಿ ಹೇಗೆ ಕಾಣುತ್ತದೆ ಎಂಬುದರ ಉದಾಹರಣೆ.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+<!-- Add this hidden element anywhere in your body -->
+<a id="downloadAnchor" style="display:none"></a>
+
+<!-- Your Font Card Button should look like this -->
+<div class="font-card">
+    <h3>Nudi Regular</h3>
+    <p class="preview-text">ಕನ್ನಡ ಅಕ್ಷರಮಾಲೆ</p>
+    <!-- We pass the 'filename' and 'url' to the function -->
+    <button class="btn-download" onclick="downloadFile('nudi-regular.ttf', 'fonts/nudi.ttf')">
+        Download Now
+    </button>
+</div>
